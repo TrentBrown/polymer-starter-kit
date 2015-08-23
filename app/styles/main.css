@@ -48,6 +48,13 @@ header.fixed h2 {
 	color: white;
 	font-size: 1.2em;
 }
+code {
+	color: #007000;
+}
+google-chart {
+	height: 300px;
+	width: 400px;
+}
 
 button.btn-swagger {
 	margin-top: 10px;

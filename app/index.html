@@ -74,31 +74,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <div class="wrapper-content">
   <paper-material elevation="1">
-    <style>
-        code {
-          color: #007000;
-        }
-
-        google-chart {
-          height: 300px;
-          width: 400px;
-        }
-
-        #selection-demo {
-          position: relative;
-          height: 300px;
-        }
-
-        #selection-chart {
-          float: left;
-        }
-
-        #selection-display {
-          display: inline-block;
-          position: relative;
-          top: 50%;
-        }
-      </style>
 
       <p>A simple <code>google-chart</code> looks like this:</p>
 
@@ -166,7 +141,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </google-chart>
         <div id="selection-display">
           Selected row: <span id="selection-label">None</span>.
- 
+        <script>
+          document.addEventListener('WebComponentsReady', function() {
+            var chart = document.querySelector('#selection-chart');
+            var label = document.querySelector('#selection-label');
+
+            chart.addEventListener('google-chart-render', function() {
+              chart.selection = [{row: 1, column: null}];
+              label.textContent = chart.selection[0].row;
+            });
+
+            document.addEventListener('google-chart-select', function(e) {
+              label.textContent =
+                  chart.selection[0] ? chart.selection[0].row : 'None';
+            });
+          });
+        </script>
+
+  </paper-material>
+
 </div>
 
     <!-- Uncomment next block to enable Service Worker support (1/2) -->
