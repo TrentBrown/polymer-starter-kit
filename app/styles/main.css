@@ -12,11 +12,10 @@ html {
 }
 body {
   background: #fafafa;
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'FuturaPTWebLight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
   margin: 0 !important;
 }
-
 .wrapper-content {
 	display: block;
 	position: relative;
@@ -27,27 +26,27 @@ body {
 	max-width: 1020px;
 	padding: 40px;
 }
-
-paper-toolbar#mainToolbar {
+header.fixed {
 	position: fixed;
 	height: 140px;
 	top: 0;
 	width: 100%;
-	padding-left: 60px;
 	z-index: 100;
 	background-color: #335464;
 }
-#topBar.paper-toolbar {
-	padding-top: 10px
-}
-.bottom {
-	padding-left: 14px;
-}
- 
 img.logo {
-	height: 60px;
+	height: 64px;
 	position: absolute;
-	bottom: -12px;
+	top: 24px;
+	left: 60px;
+}
+header.fixed h2 {
+	position: absolute;
+	top: 80px;
+	left: 64px;
+	font-weight: 100;
+	color: white;
+	font-size: 1.2em;
 }
 
 button.btn-swagger {
