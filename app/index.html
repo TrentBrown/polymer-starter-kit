@@ -16,7 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Polymer Starter Kit" />
-  <title>Polymer Starter Kit</title>
+  <title>Grafit | charts</title>
   <!-- Place favicon.ico in the `app/` directory -->
 
   <!-- Chrome for Android theme color -->
@@ -101,12 +101,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Application name -->
           <div class="middle middle-container center horizontal layout">
-            <div class="app-name">Polymer Starter Kit</div>
+            <img class="logo" src="images/grafit-logo.png" alt="">
+            <!-- <div class="app-name">Polymer Starter Kit</div> -->
           </div>
 
           <!-- Application sub title -->
           <div class="bottom bottom-container center horizontal layout">
-            <div class="bottom-title paper-font-subhead">The future of the web today</div>
+            <div class="bottom-title paper-font-subhead">Your Health Made Beautiful</div>
           </div>
 
         </paper-toolbar>
@@ -117,13 +118,40 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <section data-route="home">
               <paper-material elevation="1">
-                <my-greeting></my-greeting>
+                <h1>View Chart</h1>
+                  <style>
+                    /* Phone and tablet */
+                    #resizing_chart {
+                      height: 300px;
+                      width: 400px;
+                    }
+                    /* Desktop */
+                    @media screen and (min-width: 1024px) {
+                      #resizing_chart {
+                        width: 800px;
+                      }
+                    }
+                  </style>
 
-                <p class="paper-font-subhead">You now have:</p>
-                <my-list></my-list>
+                  <script>
+                    var media = window.matchMedia('(min-width: 1024px)');
 
-                <p class="paper-font-body2">Looking for more Web App layouts? Check out our <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p>
+                    media.addListener(function() {
+                      document.getElementById('resizing_chart').drawChart();
+                    });
+                  </script>
+
+                  <google-chart
+                    id='resizing_chart'
+                    type='column'
+                    options='{"title": "Responsive chart",
+                              "vAxis": {"minValue" : 0, "maxValue": 10}}'
+                    cols='[{"label": "Data", "type": "string"},{"label": "Value", "type": "number"}]'
+                    rows='[["Col1", 5.0],["Col2", 5.0],["Col3", 5.0]]'>
+                  </google-chart>
+
               </paper-material>
+
               <paper-material elevation="1">
                 <h1>View Chart</h1>
                 <google-chart
@@ -137,38 +165,51 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <h1>View Chart</h1>
                 <google-chart
                   type='column'
-                  options='{"title": "Month and days", "legend": "none"}'
+                  options='{
+                            "title": "Days in the month",
+                            "hAxis": {"title": "Months"},
+                            "legend": "none"
+                            }'
                   data='[
                           ["Month", "Days", { "role": "style" } 
                           ], 
                           ["Jan", 31, "color: #F47963"
                           ], 
-                          ["Feb", 28, "color: #F47963"
+                          ["Feb", 28, "color: #B5BD21"
                           ], 
-                          ["Mar", 31, "color: #F47963"
+                          ["Mar", 31, "color: #79B1B1"
                           ]
                           ]'>
                 </google-chart>
               </paper-material>
 
-              <paper-material elevation="1" class="paper-font-body2">
-                <h1 id="license">License</h1>
-                <p>Everything in this repo is BSD style license unless otherwise specified.</p>
-                <p>Copyright (c) 2015 The Polymer Authors. All rights reserved.</p>
-                <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
-                <ul>
-                <li>Redistributions of source code must retain the above copyright
-                notice, this list of conditions and the following disclaimer.</li>
-                <li>Redistributions in binary form must reproduce the above
-                copyright notice, this list of conditions and the following disclaimer
-                in the documentation and/or other materials provided with the
-                distribution.</li>
-                <li>Neither the name of Google Inc. nor the names of its
-                contributors may be used to endorse or promote products derived from
-                this software without specific prior written permission.</li>
-                </ul>
-                <p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
-              </paper-material>
+              <paper-material elevation="1">
+                <h1>View Chart</h1>
+                  <p>Here's a pie chart with an area selection:</p>
+                  <div id="selection-demo">
+                    <google-chart
+                      type="pie"
+                      id="selection-chart"
+                      options='{
+                                "title": "Distribution of days in 2001H1",
+                                "pieHole": 0.5,
+                                "pieSliceText": "value"
+                              }'
+                      data='[
+                          ["Month", "Days"
+                          ], 
+                          ["Jan", 31
+                          ], 
+                          ["Feb", 28
+                          ], 
+                          ["Mar", 31
+                          ]
+                          ]'>
+                    </google-chart>
+                    <div id="selection-display">
+                      Selected row: <span id="selection-label">None</span>.
+                    </div>
+                  </div>
 
             </section>
 

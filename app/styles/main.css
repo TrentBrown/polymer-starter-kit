@@ -12,3 +12,13 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
 }
+img.logo {
+	height: 60px;
+	position: absolute;
+	bottom: -12px;
+}
+
+google-chart {
+  height: 300px;
+  width: 400px;
+}
