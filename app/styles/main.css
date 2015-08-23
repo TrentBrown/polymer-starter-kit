@@ -6,19 +6,51 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
-
+html {
+  margin: 0;
+  padding: 0;
+}
 body {
   background: #fafafa;
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
+  margin: 0 !important;
 }
+
+.wrapper-content {
+	display: block;
+	position: relative;
+	margin-top: 120px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 1020px;
+	padding: 40px;
+}
+
+paper-toolbar#mainToolbar {
+	position: fixed;
+	height: 140px;
+	top: 0;
+	width: 100%;
+	padding-left: 60px;
+	z-index: 100;
+	background-color: #335464;
+}
+#topBar.paper-toolbar {
+	padding-top: 10px
+}
+.bottom {
+	padding-left: 60px;
+}
+ 
 img.logo {
 	height: 60px;
 	position: absolute;
 	bottom: -12px;
 }
 
-google-chart {
-  height: 300px;
-  width: 400px;
+button.btn-swagger {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
