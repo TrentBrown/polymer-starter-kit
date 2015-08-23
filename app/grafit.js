@@ -7,7 +7,6 @@ function onSwaggerButtonClick()
                 useJQuery: true,
                 success: function()
                 {
-                    // upon connect, fetch a pet and set contents to element "mydata"
                     // swagger.apis.metrics.get_metric_resource_list
                     swagger.apis.default.get_metric_resource_list
                     (
