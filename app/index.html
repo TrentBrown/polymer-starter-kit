@@ -125,7 +125,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <p class="paper-font-body2">Looking for more Web App layouts? Check out our <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p>
               </paper-material>
               <paper-material elevation="1">
-                <p class="paper-font-body2">This is another card.</p>
+                <h1>View Chart</h1>
+                <google-chart
+                  type='column'
+                  data='../bower_components/google-chart/demo/chart-data.json'
+                  options='{"title": "Community Health Workers in 2015", "legend": "none"}'>
+                </google-chart>
               </paper-material>
 
               <paper-material elevation="1" class="paper-font-body2">
