@@ -134,6 +134,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-material>
 
               <paper-material elevation="1" class="paper-font-body2">
+                <h1>View Chart</h1>
+                <google-chart
+                  type='column'
+                  options='{"title": "Month and days", "legend": "none"}'
+                  data='[
+                          ["Month", "Days", { "role": "style" } 
+                          ], 
+                          ["Jan", 31, "color: #F47963"
+                          ], 
+                          ["Feb", 28, "color: #F47963"
+                          ], 
+                          ["Mar", 31, "color: #F47963"
+                          ]
+                          ]'>
+                </google-chart>
+              </paper-material>
+
+              <paper-material elevation="1" class="paper-font-body2">
                 <h1 id="license">License</h1>
                 <p>Everything in this repo is BSD style license unless otherwise specified.</p>
                 <p>Copyright (c) 2015 The Polymer Authors. All rights reserved.</p>
