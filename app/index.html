@@ -74,6 +74,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <div class="wrapper-content">
   <paper-material elevation="1">
+    <h1>View Chart</h1>
+    <google-chart
+      type='column'
+      options='{
+                "title": "Days in the month",
+                "hAxis": {"title": "Months"},
+                "legend": "none"
+                }'
+      data='[
+              ["Month", "Days", { "role": "style" } 
+              ], 
+              ["Jan", 31, "color: #F47963"
+              ], 
+              ["Feb", 28, "color: #B5BD21"
+              ], 
+              ["Mar", 31, "color: #79B1B1"
+              ]
+              ]'>
+    </google-chart>
+  </paper-material>
+
+  <paper-material elevation="1">
 
       <p>A simple <code>google-chart</code> looks like this:</p>
 
@@ -135,7 +157,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <google-chart
           type="pie"
           id="selection-chart"
-          options='{"title": "Distribution of days in 2001H1"}'
+          options='{"title": "Distribution of days in 2001H1",
+                  "pieHole": 0.5,
+                  "pieSliceText": "value"
+                    }'
           cols='[{"label": "Month", "type": "string"},{"label": "Days", "type": "number"}]'
           rows='[["Jan", 31],["Feb", 28],["Mar", 31],["Apr", 30],["May", 31],["Jun", 30]]'>
         </google-chart>
