@@ -50,6 +50,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <!-- endbuild -->
 
+  <script src='bower_components/jquery/dist/jquery.js' type='text/javascript'></script>
+  <script src='bower_components/swagger-js/browser/swagger-client.js' type='text/javascript'></script>
+  <script src='grafit.js' type='text/javascript'></script>
+
   <!-- will be replaced with elements/elements.vulcanized.html -->
   <link rel="import" href="elements/elements.html">
   <!-- endreplace-->
@@ -182,6 +186,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           ]'>
                 </google-chart>
               </paper-material>
+
+              <button onclick="onSwaggerButtonClick()">Swagger</button>
+              <div id="mydata">Placeholder</div>
 
               <paper-material elevation="1">
                 <h1>View Chart</h1>
