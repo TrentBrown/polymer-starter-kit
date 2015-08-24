@@ -73,6 +73,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </header>
 
 <div class="wrapper-content">
+
+  <!-- Test chart -->
+  <paper-material elevation="1">
+    <h1>Test Chart</h1>
+    <google-chart id='test-chart'
+      type='column'
+    </google-chart>
+  </paper-material>
+
+  <!-- Test button -->
+  <button class="btn-swagger" onclick="onSwaggerButtonClick()">Test</button>
+  <div id="test-metrics"></div>
+  <div id="test-data"></div>
+
   <paper-material elevation="1">
     <h1>View Chart</h1>
     <google-chart
@@ -103,10 +117,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         cols='[{"label": "Data", "type": "string"},{"label": "Value", "type": "number"}]'
         rows='[["Something", 1]]'>
       </google-chart>
-
-      <!-- Swagger button -->
-          <button class="btn-swagger" onclick="onSwaggerButtonClick()">Swagger</button>
-              <div id="mydata">Placeholder</div>
   
   </paper-material>
 
