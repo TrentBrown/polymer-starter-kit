@@ -57,6 +57,16 @@ google-chart {
 }
 
 button.btn-swagger {
-	margin-top: 10px;
+	height: 40px;
+	width: 160px;
 	margin-bottom: 10px;
+	border: none;
+	background-color: #335464;
+	font-family: 'FuturaPTWebLight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+button.btn-swagger:hover {
+	background-color: #233945;
 }

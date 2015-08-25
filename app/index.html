@@ -88,22 +88,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <div id="test-data"></div>
 
   <paper-material elevation="1">
-    <h1>View Chart</h1>
+    <h1>Heart Rate</h1>
     <google-chart
       type='column'
       options='{
-                "title": "Days in the month",
-                "hAxis": {"title": "Months"},
+                "title": "Heart Rate",
+                "hAxis": {"title": "Date"},
+                "vAxis": {"title": "b/min"},
                 "legend": "none"
                 }'
       data='[
-              ["Month", "Days", { "role": "style" } 
+              ["Day", "b/min", { "role": "style" } 
               ], 
-              ["Jan", 31, "color: #F47963"
+              ["Mon 8/23", 61, "color: #F47963"
               ], 
-              ["Feb", 28, "color: #B5BD21"
+              ["Tue 8/24", 68, "color: #F47963"
               ], 
-              ["Mar", 31, "color: #79B1B1"
+              ["Wed 8/25", 58, "color: #F47963"
               ]
               ]'>
     </google-chart>
