@@ -92,39 +92,56 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <google-chart
       type='column'
       options='{
-                "title": "Heart Rate",
+                "title": "Resting Heart Rate",
                 "hAxis": {"title": "Date"},
                 "vAxis": {"title": "b/min"},
                 "legend": "none"
                 }'
-      data='[
-              ["Day", "b/min", { "role": "style" } 
-              ], 
-              ["Mon 8/23", 61, "color: #F47963"
-              ], 
-              ["Tue 8/24", 68, "color: #F47963"
-              ], 
-              ["Wed 8/25", 58, "color: #F47963"
-              ]
-              ]'>
+     
+        cols='[ {"label": "Date", "type": "string" },
+                {"label": "b/min", "type": "number"},
+                {"role": "style", "type": "string"},
+                {"role": "annotation", "type": "string"}
+                ]'
+        rows='[ ["Mon 8/24", 61, "#F47963", "61"],
+                ["Tue 8/25", 68, "#F47963", "68"],
+                ["Wed 8/26", 58, "#F47963", "58"]
+                ]'>
     </google-chart>
   </paper-material>
-
+  
   <paper-material elevation="1">
-
-      <p>A simple <code>google-chart</code> looks like this:</p>
+    
+    <h1>Blood Pressure</h1>
 
       <google-chart
-        cols='[{"label": "Data", "type": "string"},{"label": "Value", "type": "number"}]'
-        rows='[["Something", 1]]'>
-      </google-chart>
+          type='column'
+          options='{  "title": "Blood Pressure",
+                      "hAxis": {"title": "Date"},
+                      "vAxis": {"title": "mn/mx"},
+                      "legend": "none"
+                    }',
+                  
+          cols='[ {"label": "Date", "type": "string" },
+                {"label": "Systolic", "type": "number"},
+                {"role": "style", "type": "string"},
+                {"role": "annotation", "type": "string"},
+                {"label": "Diastolic", "type": "number"},
+                {"role": "style", "type": "string"},
+                {"role": "annotation", "type": "string"}
+                ]'
+          rows='[ ["Mon 8/24", 70, "#F47963", "70 Systolic", 120, "#994B3D", "120 Diastolic"],
+                  ["Tue 8/25", 72, "#F47963", "72 Systolic", 122, "#994B3D", "122 Diastolic"],
+                  ["Wed 8/26", 68, "#F47963", "68 Systolic", 118, "#994B3D", "118 Diastolic"]
+                ]'
+                 >
+        </google-chart>
   
   </paper-material>
 
   <paper-material elevation="1">
 
-      <p>Charts can be resized with CSS, but you'll need to call the <code>drawChart</code> method when the size changes.</p>
-      <p>Here's a basic responsive example using only CSS and JS. You could also use <code>&lt;iron-media-query&gt;</code>.</p>
+      <h1>Distance Running</h1>
 
       <style>
         /* Phone and tablet */
@@ -152,15 +169,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <google-chart
         id='resizing_chart'
         type='column'
-        options='{"title": "Responsive chart",
-                  "vAxis": {"minValue" : 0, "maxValue": 10}}'
-        cols='[{"label": "Data", "type": "string"},{"label": "Value", "type": "number"}]'
-        rows='[["Col1", 5.0],["Col2", 5.0],["Col3", 5.0]]'>
+        options='{"title": "Running in miles",
+                  "vAxis": {"title": "Miles", "minValue" : 0, "maxValue": 10},
+                  "hAxis": {"title": "Date"},
+                  "legend": "none"
+                  }'
+        cols='[ {"label": "Date", "type": "string" },
+                {"label": "Miles", "type": "number"},
+                {"role": "style", "type": "string"},
+                {"role": "annotation", "type": "string"}
+                ]'
+        rows='[ ["Mon 8/24", 6.9, "#64A3C8", "6.9 miles"],
+                ["Tue 8/25", 5.0, "#8BAC96", "5.0 miles"],
+                ["Wed 8/26", 8.2, "#B5BD21", "8.2 miles"]
+                ]'>
       </google-chart>
   
   </paper-material>
 
-  <paper-material elevation="1">
+ <!--  <paper-material elevation="1">
 
       <p>Here's a pie chart with an area selection:</p>
 
@@ -171,9 +198,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           options='{"title": "Distribution of days in 2001H1",
                   "pieHole": 0.5,
                   "pieSliceText": "value"
-                    }'
-          cols='[{"label": "Month", "type": "string"},{"label": "Days", "type": "number"}]'
-          rows='[["Jan", 31],["Feb", 28],["Mar", 31],["Apr", 30],["May", 31],["Jun", 30]]'>
+                  }'
+          cols='[ {"label": "Month", "type": "string"},
+                  {"label": "Days", "type": "number"}
+                  ]'
+          rows='[ ["Jan", 31],
+                  ["Feb", 28],
+                  ["Mar", 31],
+                  ["Apr", 30],
+                  ["May", 31],
+                  ["Jun", 30]
+                  ]'>
         </google-chart>
         <div id="selection-display">
           Selected row: <span id="selection-label">None</span>.
@@ -194,7 +229,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           });
         </script>
 
-  </paper-material>
+  </paper-material> -->
 
 </div>
 
